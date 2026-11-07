@@ -1,0 +1,313 @@
+:root {
+    color-scheme: light;
+    --color-ink: #17243b;
+    --color-muted: #59677d;
+    --color-primary: #176b87;
+    --color-primary-dark: #10536d;
+    --color-accent: #65d6c3;
+    --color-paper: #f3f6f8;
+    --color-surface: #ffffff;
+    --color-border: #dce5eb;
+    --shadow-card: 0 16px 40px rgb(23 36 59 / 7%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 50% 20%, rgb(213 230 236 / 36%), transparent 48%),
+        var(--color-paper);
+    color: var(--color-ink);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4.5rem, 11vw, 8rem) 1.5rem 5rem;
+    background:
+        radial-gradient(circle at 82% 18%, rgb(101 214 195 / 19%), transparent 25rem),
+        linear-gradient(135deg, #10243b 0%, #173d58 58%, #176b87 100%);
+    color: #f7fbfd;
+    text-align: center;
+}
+
+header::before {
+    display: block;
+    margin-bottom: 1.25rem;
+    color: var(--color-accent);
+    content: "PRODUCT CASE STUDY  /  10 MINGGU";
+    font-size: 0.75rem;
+    font-weight: 750;
+    letter-spacing: 0.16em;
+}
+
+header::after {
+    position: absolute;
+    right: -9rem;
+    bottom: -16rem;
+    width: 31rem;
+    height: 31rem;
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3rem rgb(255 255 255 / 3%), 0 0 0 6rem rgb(255 255 255 / 2%);
+    content: "";
+    pointer-events: none;
+}
+
+header h1,
+header p,
+header nav {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: clamp(2.4rem, 6vw, 4.7rem);
+    font-weight: 760;
+    letter-spacing: -0.055em;
+    line-height: 1.08;
+}
+
+header p:first-of-type {
+    max-width: 760px;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: #e2f0f3;
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    line-height: 1.55;
+}
+
+header p:last-of-type {
+    max-width: 680px;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #c4d6e0;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+header nav a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid rgb(255 255 255 / 28%);
+    border-radius: 999px;
+    color: #f7fbfd;
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+header nav a:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    background: rgb(255 255 255 / 10%);
+}
+
+header nav a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+hr {
+    display: none;
+}
+
+main {
+    width: min(100% - 2rem, 980px);
+    margin: -2rem auto 0;
+    position: relative;
+    z-index: 2;
+    counter-reset: phase;
+}
+
+main section {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    counter-increment: phase;
+}
+
+main section::after {
+    position: absolute;
+    top: -4rem;
+    right: -3rem;
+    width: 11rem;
+    height: 11rem;
+    border: 1px solid #e8eff2;
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+main h2,
+main h3,
+main p,
+main ul,
+main ol,
+main img {
+    position: relative;
+    z-index: 1;
+}
+
+main h2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin: 0 0 1.25rem;
+    color: var(--color-ink);
+    font-size: clamp(1.45rem, 3.5vw, 2rem);
+    letter-spacing: -0.035em;
+    line-height: 1.3;
+}
+
+main h2::before {
+    flex: 0 0 auto;
+    padding: 0.3rem 0.55rem;
+    border-radius: 0.55rem;
+    background: #e5f5f2;
+    color: var(--color-primary-dark);
+    content: "0" counter(phase);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+
+main h3 {
+    margin: 2rem 0 0.65rem;
+    color: var(--color-primary-dark);
+    font-size: 1.08rem;
+    letter-spacing: -0.015em;
+}
+
+main p {
+    margin: 0 0 1rem;
+    color: var(--color-muted);
+}
+
+main p strong,
+main li strong {
+    color: var(--color-ink);
+}
+
+main ul,
+main ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.4rem;
+    color: var(--color-muted);
+}
+
+main li {
+    padding-left: 0.25rem;
+    margin: 0.45rem 0;
+}
+
+main li::marker {
+    color: var(--color-primary);
+    font-weight: 750;
+}
+
+main ul ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+main img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    background: #edf3f5;
+    object-fit: cover;
+}
+
+main section:last-child ul {
+    padding: 1.1rem 1.4rem 1.1rem 2.7rem;
+    border: 1px solid #d5ece6;
+    border-radius: 0.85rem;
+    background: #f3fbf8;
+}
+
+footer {
+    padding: 1.5rem 1rem 2.5rem;
+    color: #758297;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    header {
+        padding: 4rem 1.25rem 4.25rem;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 280px;
+    }
+
+    main {
+        width: min(100% - 1.25rem, 980px);
+        margin-top: -1.5rem;
+    }
+
+    main section {
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+    }
+
+    main h2 {
+        gap: 0.65rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

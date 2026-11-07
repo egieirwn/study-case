@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: IoT Component Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <h1>Studi Kasus: IoT-Component-Manager</h1>
+        <p><strong>Menyelesaikan Kekacauan Inventaris Lab Kampus dengan Sistem Peminjaman Berbasis Web</strong></p>
+        <p>Sebuah perjalanan rekayasa produk digital end-to-end (10 Minggu) untuk mengelola peminjaman sensor,
+            mikrokontroler, dan modul IoT secara terstruktur dan efisien.</p>
+
+        <nav>
+            <a href="https://iot-inventory.egie.my.id/" target="_blank">[Lihat Live Web]</a>
+            <a href="https://github.com/egieirwn/Iot-Component-Manager" target="_blank">[Repositori GitHub]</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <!-- FASE 01: Validasi Masalah -->
+        <section id="fase-1">
+            <h2>Validasi Masalah & Riset Pengguna</h2>
+            <p><strong>Problem Statement:</strong> Proses peminjaman komponen IoT (seperti ESP32, Arduino, dan sensor)
+                di laboratorium kampus masih dilakukan secara manual atau menggunakan pencatatan yang tidak terpusat.
+                Hal ini menyebabkan komponen sering hilang, status ketersediaan tidak akurat, dan pelacakan riwayat
+                peminjaman menjadi sangat sulit.</p>
+
+            <h3>User Persona & Pain Points</h3>
+            <ul>
+                <li><strong>Target Pengguna:</strong> Mahasiswa yang sedang mengerjakan proyek sistem tertanam dan
+                    Asisten Laboratorium.</li>
+                <li><strong>Pain Points:</strong>
+                    <ul>
+                        <li>Mahasiswa harus datang ke lab hanya untuk mengecek ketersediaan komponen.</li>
+                        <li>Asisten lab kewalahan mencatat tanggal pengembalian dan menagih komponen yang telat
+                            dikembalikan.</li>
+                        <li>Tidak ada hitung mundur otomatis untuk tenggat waktu peminjaman.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- FASE 02: Blueprint & UI System -->
+        <section id="fase-2">
+            <h2>Blueprint & Desain Antarmuka</h2>
+            <p>Sebelum menulis kode, saya memetakan alur pengguna (*User Flow*) agar interaksi terasa natural dan tidak
+                membingungkan.</p>
+
+            <h3>Alur Utama (User Flow)</h3>
+            <ol>
+                <li>Pengguna melakukan Login/Sign Up.</li>
+                <li>Melihat *Dashboard* ringkasan dan daftar komponen yang tersedia.</li>
+                <li>Mengajukan peminjaman komponen dan melihat status di menu "Peminjaman Saya".</li>
+            </ol>
+
+            <h3>Wireframe & Prototipe</h3>
+            <p>Desain dibangun menggunakan Figma dengan mematuhi prinsip aksesibilitas. Saya menerapkan tag semantik
+                HTML5 sejak awal perancangan untuk memastikan kerangka UI solid dan mudah diindeks oleh *screen reader*.
+            </p>
+            <!-- Tautan placeholder untuk gambar prototipe Figma -->
+            <img src="https://via.placeholder.com/600x300?text=Screenshot+Desain+Figma" alt="Desain UI Figma">
+        </section>
+
+        <hr>
+
+        <!-- FASE 03: Code & Dynamic Data -->
+        <section id="fase-3">
+            <h2>Pengembangan Kode & Integrasi Data Dinamis</h2>
+            <p>Untuk memastikan performa aplikasi cepat dan pengelolaan data yang real-time, saya memilih tumpukan
+                teknologi (*Tech Stack*) modern:</p>
+            <ul>
+                <li><strong>Frontend:</strong> HTML5 & Svelte (memberikan reaktivitas yang sangat cepat tanpa virtual
+                    DOM).</li>
+                <li><strong>Backend/Database:</strong> Supabase (sebagai *BaaS* untuk autentikasi pengguna dan manajemen
+                    *database* relasional inventaris).</li>
+                <li><strong>Deployment:</strong> Cloudflare (memastikan web dapat diakses cepat secara global dengan
+                    perlindungan keamanan bawaan).</li>
+            </ul>
+            <p>Di fase ini, logika *CRUD* (Create, Read, Update, Delete) diimplementasikan, termasuk fitur hitung mundur
+                waktu jatuh tempo pengembalian komponen.</p>
+        </section>
+
+        <hr>
+
+        <!-- FASE 04: Testing & Readiness -->
+        <section id="fase-4">
+            <h2>Pengujian Pengguna & Kesiapan Rilis</h2>
+            <p>Setelah web diluncurkan (*live*), saya melakukan *Usability Testing* menggunakan alat pelacak (*tracker*)
+                untuk melihat interaksi pengguna secara nyata.</p>
+
+            <h3>Hasil Iterasi (Before vs After)</h3>
+            <p>Berdasarkan rekaman interaksi, beberapa pengguna kebingungan saat mencari letak tombol "Kembalikan" di
+                tabel. Saya melakukan iterasi desain secara cepat (*sprint*) melalui *Pull Request* di GitHub.</p>
+            <!-- Tautan placeholder untuk gambar Before After -->
+            <img src="https://via.placeholder.com/600x250?text=Gambar+Before+After+Perbaikan+UI" alt="Before After UI">
+
+            <h3>Audit Performa (Core Web Vitals)</h3>
+            <p>Aplikasi ini sangat ringan dan responsif, dibuktikan dengan skor Google Lighthouse yang menembus angka
+                memuaskan (>85).</p>
+            <!-- Tautan placeholder untuk gambar Skor Lighthouse -->
+            <img src="https://via.placeholder.com/600x200?text=Screenshot+Skor+Lighthouse+Di+Atas+85"
+                alt="Skor Google Lighthouse">
+
+            <h3>Checklist Keamanan Dasar</h3>
+            <ul>
+                <li>✅ <strong>HTTPS Terenkripsi:</strong> Koneksi aman difasilitasi oleh Cloudflare.</li>
+                <li>✅ <strong>Sanitasi Input:</strong> Formulir peminjaman dan pencarian aman dari injeksi script
+                    berbahaya.</li>
+                <li>✅ <strong>Isolasi `.env`:</strong> Kunci API Supabase dan konfigurasi sensitif lainnya aman dan
+                    tidak bocor di repositori publik.</li>
+                <li>✅ <strong>Privasi Data (PDP):</strong> Autentikasi yang ketat dan tidak mengumpulkan data pribadi di
+                    luar keperluan kampus.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p><small>&copy; 2026. Studi Kasus Portofolio Modul 10.</small></p>
+    </footer>
+
+</body>
+
+</html>
