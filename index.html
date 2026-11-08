@@ -39,7 +39,7 @@
             </nav>
 
             <div class="header-actions">
-                <a href="https://iot-inventaris.egie.my.id/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                <a href="https://iot-inventory.egie.my.id/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
                     <span>Live Demo</span>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </a>
@@ -105,7 +105,7 @@
                     <span class="metric-delta">Nol barang tanpa riwayat status</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-number">95+</span>
+                    <span class="metric-number">94–100</span>
                     <span class="metric-label">Lighthouse Audit</span>
                     <span class="metric-delta">Audit performa, aksesibilitas &amp; SEO</span>
                 </div>
@@ -832,55 +832,129 @@ END; $$ LANGUAGE plpgsql SECURITY DEFINER;</code></pre>
                     <p>Skor evaluasi audit web nyata dengan benchmark koneksi mobile 4G.</p>
                 </div>
 
-                <div class="gauge-grid">
-                    <div class="gauge-card">
-                        <div class="circle-gauge">
-                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
-                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <span class="gauge-value">92</span>
-                        </div>
-                        <span class="gauge-label">Performance</span>
-                        <small>LCP &lt; 1.8s &bull; FCP 0.9s</small>
-                    </div>
-
-                    <div class="gauge-card">
-                        <div class="circle-gauge">
-                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
-                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <span class="gauge-value">95</span>
-                        </div>
-                        <span class="gauge-label">Accessibility</span>
-                        <small>WCAG 2.1 AA Compliant</small>
-                    </div>
-
-                    <div class="gauge-card">
-                        <div class="circle-gauge">
-                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
-                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <span class="gauge-value">100</span>
-                        </div>
-                        <span class="gauge-label">Best Practices</span>
-                        <small>HTTPS &amp; Modern APIs</small>
-                    </div>
-
-                    <div class="gauge-card">
-                        <div class="circle-gauge">
-                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
-                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <span class="gauge-value">100</span>
-                        </div>
-                        <span class="gauge-label">SEO Audit</span>
-                        <small>Semantic Meta &amp; OpenGraph</small>
-                    </div>
+                <div class="lighthouse-tab-list" role="tablist" aria-label="Pilih mode hasil Lighthouse" aria-orientation="horizontal">
+                    <button class="lighthouse-tab" id="lighthouse-tab-mobile" type="button" role="tab" aria-selected="true" aria-controls="lighthouse-panel-mobile" tabindex="0">Mobile</button>
+                    <button class="lighthouse-tab" id="lighthouse-tab-desktop" type="button" role="tab" aria-selected="false" aria-controls="lighthouse-panel-desktop" tabindex="-1">Desktop</button>
                 </div>
+
+                <section class="lighthouse-tab-panel" id="lighthouse-panel-mobile" role="tabpanel" aria-labelledby="lighthouse-tab-mobile" tabindex="0">
+                    <div class="gauge-grid">
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="99, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <span class="gauge-value">99</span>
+                            </div>
+                            <span class="gauge-label">Performance</span>
+                        </div>
+
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="94, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <span class="gauge-value">94</span>
+                            </div>
+                            <span class="gauge-label">Accessibility</span>
+                        </div>
+
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <span class="gauge-value">100</span>
+                            </div>
+                            <span class="gauge-label">Best Practices</span>
+                        </div>
+
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                            <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <span class="gauge-value">100</span>
+                            </div>
+                            <span class="gauge-label">SEO</span>
+                        </div>
+                    </div>
+                    <dl class="lighthouse-metrics">
+                        <div class="lighthouse-metric"><dt>First Contentful Paint (FCP)</dt><dd>1,5 dtk</dd></div>
+                        <div class="lighthouse-metric"><dt>Largest Contentful Paint (LCP)</dt><dd>1,5 dtk</dd></div>
+                        <div class="lighthouse-metric"><dt>Total Blocking Time (TBT)</dt><dd>0 md</dd></div>
+                        <div class="lighthouse-metric"><dt>Cumulative Layout Shift (CLS)</dt><dd>0,05</dd></div>
+                        <div class="lighthouse-metric"><dt>Speed Index</dt><dd>2,4 dtk</dd></div>
+                    </dl>
+                    <figure class="lighthouse-evidence">
+                        <a href="assets/lighthouse-mobile.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot hasil Lighthouse mode Mobile ukuran penuh">
+                            <img src="assets/lighthouse-mobile.png" alt="Hasil Google Lighthouse mode Mobile: Performance 99, Accessibility 94, Best Practices 100, SEO 100" width="872" height="768" loading="lazy">
+                        </a>
+                        <figcaption>Hasil Google Lighthouse mode Mobile, diuji pada Minggu 8 - November - 2026, URL: <a href="https://study-case-porto.vercel.app/" target="_blank" rel="noopener noreferrer">https://study-case-porto.vercel.app/</a>.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="lighthouse-tab-panel" id="lighthouse-panel-desktop" role="tabpanel" aria-labelledby="lighthouse-tab-desktop" tabindex="0" hidden>
+                    <div class="gauge-grid">
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                                <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="gauge-value">100</span>
+                            </div>
+                            <span class="gauge-label">Performance</span>
+                        </div>
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                                <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="94, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="gauge-value">94</span>
+                            </div>
+                            <span class="gauge-label">Accessibility</span>
+                        </div>
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                                <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="gauge-value">100</span>
+                            </div>
+                            <span class="gauge-label">Best Practices</span>
+                        </div>
+                        <div class="gauge-card">
+                            <div class="circle-gauge">
+                                <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="gauge-value">100</span>
+                            </div>
+                            <span class="gauge-label">SEO</span>
+                        </div>
+                    </div>
+                    <dl class="lighthouse-metrics">
+                        <div class="lighthouse-metric"><dt>First Contentful Paint (FCP)</dt><dd>0,4 dtk</dd></div>
+                        <div class="lighthouse-metric"><dt>Largest Contentful Paint (LCP)</dt><dd>0,4 dtk</dd></div>
+                        <div class="lighthouse-metric"><dt>Total Blocking Time (TBT)</dt><dd>0 md</dd></div>
+                        <div class="lighthouse-metric"><dt>Cumulative Layout Shift (CLS)</dt><dd>0,02</dd></div>
+                        <div class="lighthouse-metric"><dt>Speed Index</dt><dd>0,9 dtk</dd></div>
+                    </dl>
+                    <figure class="lighthouse-evidence">
+                        <a href="assets/lighthouse-desktop.png" target="_blank" rel="noopener noreferrer" aria-label="Buka screenshot hasil Lighthouse mode Desktop ukuran penuh">
+                            <img src="assets/lighthouse-desktop.png" alt="Hasil Google Lighthouse mode Desktop: Performance 100, Accessibility 94, Best Practices 100, SEO 100" width="814" height="768" loading="lazy">
+                        </a>
+                        <figcaption>Hasil Google Lighthouse mode Desktop, diuji pada Minggu 8 - November - 2026, URL: <a href="https://study-case-porto.vercel.app/" target="_blank" rel="noopener noreferrer">https://study-case-porto.vercel.app/</a>.</figcaption>
+                    </figure>
+                </section>
             </div>
 
             <!-- Security & Compliance Matrix -->
@@ -1046,6 +1120,42 @@ END; $$ LANGUAGE plpgsql SECURITY DEFINER;</code></pre>
         document.querySelectorAll('.case-section, .bento-card, .deliverable-card, .member-card, .design-system-widget').forEach(el => {
             el.classList.add('reveal-on-scroll');
             revealObserver.observe(el);
+        });
+
+        // Lighthouse score tabs
+        const lighthouseTabs = Array.from(document.querySelectorAll('.lighthouse-tab'));
+        const activateLighthouseTab = (tab, moveFocus = false) => {
+            lighthouseTabs.forEach(currentTab => {
+                const isSelected = currentTab === tab;
+                currentTab.setAttribute('aria-selected', String(isSelected));
+                currentTab.tabIndex = isSelected ? 0 : -1;
+                document.getElementById(currentTab.getAttribute('aria-controls')).hidden = !isSelected;
+            });
+
+            if (moveFocus) {
+                tab.focus();
+            }
+        };
+
+        lighthouseTabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => activateLighthouseTab(tab));
+            tab.addEventListener('keydown', event => {
+                let nextIndex;
+                if (event.key === 'ArrowRight') {
+                    nextIndex = (index + 1) % lighthouseTabs.length;
+                } else if (event.key === 'ArrowLeft') {
+                    nextIndex = (index - 1 + lighthouseTabs.length) % lighthouseTabs.length;
+                } else if (event.key === 'Home') {
+                    nextIndex = 0;
+                } else if (event.key === 'End') {
+                    nextIndex = lighthouseTabs.length - 1;
+                } else {
+                    return;
+                }
+
+                event.preventDefault();
+                activateLighthouseTab(lighthouseTabs[nextIndex], true);
+            });
         });
 
         // Active State Navigation Tracking

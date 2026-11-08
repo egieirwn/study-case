@@ -58,11 +58,10 @@ Pengujian langsung terhadap 5 partisipan mahasiswa dengan protokol *Think-Aloud*
 - **Perbaikan 2 (Lapor Rusak):** Penambahan fitur checkbox & diagnosis kerusakan pada formulir pengembalian.
 
 ### 5. Fase 05 — Audit Lighthouse & Keamanan (Modul 10)
-- **Google Lighthouse Scores:**
-  - 🟢 **Performance:** 92 / 100
-  - 🟢 **Accessibility:** 95 / 100
-  - 🟢 **Best Practices:** 100 / 100
-  - 🟢 **SEO:** 100 / 100
+- **Google Lighthouse Desktop:** Performance 100, Accessibility 94, Best Practices 100, SEO 100.
+  - FCP 0,4 dtk, LCP 0,4 dtk, TBT 0 md, CLS 0,02, Speed Index 0,9 dtk.
+- **Google Lighthouse Mobile (benchmark 4G):** Performance 99, Accessibility 94, Best Practices 100, SEO 100.
+  - FCP 1,5 dtk, LCP 1,5 dtk, TBT 0 md, CLS 0,05, Speed Index 2,4 dtk.
 - **6 Pilar Keamanan:** Enkripsi HTTPS SSL/TLS 1.3, Sanitasi Input anti-XSS, Vault Environment Secrets (`.env`), Kepatuhan Minimalisasi Data UU PDP, Whitelist CORS, dan JWT Session Security.
 
 ---
@@ -82,7 +81,9 @@ study-case/
     ├── wireframe hitam-putih.png   # Desain wireframe Low-Fi
     ├── UI final berwarna.png       # Prototipe High-Fi Figma
     ├── Code Editor.png     # Screenshot struktur HTML semantik
-    └── matriks-testing.png # Screenshot tabel data usability testing Modul 9
+    ├── matriks-testing.png # Screenshot tabel data usability testing Modul 9
+    ├── lighthouse-mobile.png  # Screenshot audit Google Lighthouse mode Mobile
+    └── lighthouse-desktop.png # Screenshot audit Google Lighthouse mode Desktop
 ```
 
 ---

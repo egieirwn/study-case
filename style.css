@@ -1863,6 +1863,43 @@ main {
     color: var(--color-muted);
 }
 
+.lighthouse-tab-list {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+.lighthouse-tab {
+    min-height: 44px;
+    padding: 0.55rem 1.4rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    color: var(--color-muted);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lighthouse-tab[aria-selected="true"] {
+    border-color: var(--color-primary-dark);
+    background: var(--color-primary-dark);
+    color: #ffffff;
+}
+
+.lighthouse-tab:focus-visible,
+.lighthouse-tab-panel:focus-visible {
+    outline: 3px solid var(--color-primary-dark);
+    outline-offset: 3px;
+}
+
+.lighthouse-tab-panel {
+    min-width: 0;
+}
+
 .gauge-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1935,6 +1972,67 @@ main {
     font-size: 0.72rem;
     color: var(--color-muted);
     margin-top: 2px;
+}
+
+.lighthouse-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+}
+
+.lighthouse-metric {
+    min-width: 0;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: #ffffff;
+}
+
+.lighthouse-metric dt {
+    color: var(--color-ink);
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.lighthouse-metric dd {
+    margin-top: 4px;
+    color: #15803d;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.lighthouse-evidence {
+    margin-top: var(--space-6);
+    text-align: center;
+}
+
+.lighthouse-evidence a {
+    display: block;
+}
+
+.lighthouse-evidence img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.lighthouse-evidence figcaption {
+    margin-top: var(--space-2);
+    color: #475569;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.lighthouse-evidence figcaption a {
+    display: inline;
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 /* Security Matrix Card */
@@ -2317,6 +2415,40 @@ main {
 
     .case-section {
         padding: 1.25rem 1rem;
+    }
+
+    .lighthouse-card-wrapper {
+        padding: 1rem;
+    }
+
+    .gauge-grid {
+        gap: 0.5rem;
+    }
+
+    .gauge-card {
+        padding: 0.5rem;
+    }
+
+    .circle-gauge {
+        width: 72px;
+        height: 72px;
+    }
+
+    .gauge-value {
+        font-size: 1.15rem;
+    }
+
+    .lighthouse-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .lighthouse-metric {
+        padding: 0.625rem;
+    }
+
+    .lighthouse-metric dt {
+        font-size: 0.7rem;
     }
 
     .stepper-grid {
