@@ -2199,12 +2199,47 @@ main {
         display: none; /* Keep header clean on mobile */
     }
 
+    .container,
+    .header-inner {
+        width: min(100% - 2rem, var(--max-width));
+    }
+
+    .hero-section {
+        padding: 3.5rem 0 3rem;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .browser-header {
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .browser-address-bar {
+        min-width: 0;
+        margin-inline: 0;
+        padding-inline: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     .hero-meta-strip {
         gap: 6px;
     }
 
     .impact-metrics-bar {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .deliverables-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .bento-grid--problem {
@@ -2248,6 +2283,10 @@ main {
         padding: 1.6rem 1.25rem;
     }
 
+    .case-section :is(.bento-grid--problem, .deliverables-grid, .stepper-grid, .tokens-demo-grid, .tech-bento-grid, .dual-grid, .features-list-grid, .metrics-summary-card, .diff-narrative, .diff-visuals, .gauge-grid, .security-matrix-grid) > * {
+        min-width: 0;
+    }
+
     .footer-container {
         flex-direction: column;
         align-items: flex-start;
@@ -2255,15 +2294,56 @@ main {
 }
 
 @media (max-width: 480px) {
+    .header-inner {
+        gap: 0.5rem;
+    }
+
+    .brand-badge {
+        display: none;
+    }
+
+    .header-actions .btn {
+        padding-inline: 0.75rem;
+        font-size: 0.74rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 8vw, 2.4rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .case-section {
+        padding: 1.25rem 1rem;
+    }
+
     .stepper-grid {
         grid-template-columns: 1fr;
     }
 
     .impact-metrics-bar {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    .metric-label {
+        font-size: 0.68rem;
+        text-align: center;
+    }
+
+    .metric-delta {
+        font-size: 0.68rem;
+        text-align: center;
     }
 
     .metrics-summary-card {
+        grid-template-columns: 1fr;
+    }
+
+    .swatches-list {
         grid-template-columns: 1fr;
     }
 
