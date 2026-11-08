@@ -1,9 +1,9 @@
 # ⚡ Campus IoT — Platform Manajemen Inventaris Komponen Terpadu
 > **Product Case Study Portfolio &bull; Program MSIB Batch 5 &bull; PT VINIX SEVEN AURUM**
 
-[![HTML5 Semantic](https://img.shields.io/badge/HTML5-Semantic%20Architecture-E34F26?logo=html5&logoColor=white)](case-study.html)
+[![HTML5 Semantic](https://img.shields.io/badge/HTML5-Semantic%20Architecture-E34F26?logo=html5&logoColor=white)](index.html)
 [![Modern CSS Tokens](https://img.shields.io/badge/CSS3-Design%20Tokens%20%26%20Bento-1572B6?logo=css3&logoColor=white)](style.css)
-[![WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-22C55E)](case-study.html)
+[![WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-22C55E)](index.html)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-iot--inventaris.egie.my.id-2563EB?logo=googlechrome&logoColor=white)](https://iot-inventaris.egie.my.id/)
 [![Source Code](https://img.shields.io/badge/GitHub-Iot--Component--Manager-181717?logo=github&logoColor=white)](https://github.com/egieirwn/Iot-Component-Manager)
 
@@ -72,7 +72,6 @@ Pengujian langsung terhadap 5 partisipan mahasiswa dengan protokol *Think-Aloud*
 ```
 study-case/
 ├── index.html              # Entry point utama (support GitHub Pages langsung)
-├── case-study.html         # Dokumen studi kasus semantik lengkap
 ├── style.css               # Stylesheet modern (Bento Grid, Custom Properties, Glassmorphism)
 ├── design-system.md        # Spesifikasi Design Tokens & panduan UI/UX
 ├── README.md               # Dokumentasi resmi proyek
